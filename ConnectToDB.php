@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Hello, this is ATN toy shop";
+echo "Hello, this is ATN shop";
 ?>
 
 <?php
@@ -20,8 +20,8 @@ if (empty(getenv("DATABASE_URL"))){
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-54-225-72-238.compute-1.amazonaws.com;port=5432;user=zyspzjwbrlxfnk;password=95402f2fcd09500f7ad877a328cb24cb0ac00800666b42159462534ac9619b11
-;dbname=d7f8iof0djq8lo",
+        "host=ec2-54-225-72-238.compute-1.amazonaws.com;port=5432;user=cibttxrjklxbqp;password=be605ce69ac7c5cf26b6b3a833e65b243685409a9d385e0a9872bdd17299b098;
+        dbname=dfuhjimp17l4vf",
         $db["host"],
         $db["port"],
         $db["user"],
