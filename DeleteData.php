@@ -10,7 +10,7 @@ echo "Insert database!";
 ?>
 <ul>
     <form name="DeleteData" action="DeleteData.php" method="POST" >
-<li>toyID:</li><li><input type="text" name="toyid" /></li>
+<li>ID:</li><li><input type="text" name="id" /></li>
 <li><button type="submit" value="Submit">Delete</button></li>
 <?php
 
@@ -32,10 +32,10 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "DELETE FROM toy WHERE toyid = '$_POST[toyid]'";
+$sql = "DELETE FROM managerATN WHERE id = '$_POST[id]'";
 $stmt = $pdo->prepare($sql);
 
-if(is_null ($_POST[toyid])== FALSE)  {    
+if(is_null ($_POST[id])== FALSE)  {    
     if($stmt->execute() == TRUE){
         echo "Record updated successfully.";
     } else {
