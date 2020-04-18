@@ -14,8 +14,8 @@ list-style: none;
 <h2>Enter data into table</h2>
 <ul>
     <form name="InsertData" action="InsertData.php" method="POST" >
-<li>toyID:</li><li><input type="text" name="toyid" /></li>
-<li>Toy Name:</li><li><input type="text" name="toyname" /></li>
+<li>ID:</li><li><input type="text" name="id" /></li>
+<li>Name:</li><li><input type="text" name="name" /></li>
 
 <li><input type="submit" /></li>
 </form>
@@ -44,12 +44,12 @@ if($pdo === false){
      echo "ERROR: Could not connect Database";
 }
 
-$sql = "INSERT INTO toy(toyid, toyname)"
-        . " VALUES('$_POST[toyid]','$_POST[toyname]')";
+$sql = "INSERT INTO managerATN(id, name)"
+        . " VALUES('$_POST[id]','$_POST[name]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[toyid])) {
-   echo "toyid must be not null";
+ if (is_null($_POST[id])) {
+   echo "id must be not null";
  }
  else
  {
