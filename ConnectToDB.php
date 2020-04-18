@@ -43,8 +43,8 @@ $resultSet = $stmt->fetchAll();
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>Toy ID</th>
-        <th>Toy Name</th>
+        <th>ID</th>
+        <th>Name</th>
       </tr>
     </thead>
     <tbody>
@@ -54,8 +54,8 @@ $resultSet = $stmt->fetchAll();
              foreach ($resultSet as $row) {
       ?>
       <tr>
-        <td scope="row"><?php echo $row['toyid'] ?></td>
-        <td><?php echo $row['toyname'] ?></td>  
+        <td scope="row"><?php echo $row['id'] ?></td>
+        <td><?php echo $row['name'] ?></td>  
       </tr>
       <?php
         }
