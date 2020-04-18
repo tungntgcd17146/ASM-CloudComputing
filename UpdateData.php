@@ -10,8 +10,8 @@ echo "Update database!";
 ?>
 <ul>
     <form name="UpdateData" action="UpdateData.php" method="POST" >
-<li>toyID:</li><li><input type="text" name="toyid" /></li>
-<li>Toy Name:</li><li><input type="text" name="toyname" /></li>
+<li>ID:</li><li><input type="text" name="id" /></li>
+<li>Name:</li><li><input type="text" name="name" /></li>
 
 <li><input type="submit" /></li>
 </form>
@@ -35,9 +35,9 @@ if (empty(getenv("DATABASE_URL"))){
         ltrim($db["path"], "/")
    ));
 }  
-$sql = "UPDATE toy SET  toyname = '$_POST[toyname]' WHERE toyid = '$_POST[toyid]'";
+$sql = "UPDATE toy SET  name = '$_POST[name]' WHERE id = '$_POST[id]'";
       $stmt = $pdo->prepare($sql);
-if(is_null ($_POST[toyid])== FALSE)  {    
+if(is_null ($_POST[id])== FALSE)  {    
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
