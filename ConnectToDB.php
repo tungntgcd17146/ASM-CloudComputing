@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Hello, this is ATN shop";
+echo "Hello, this is ATN toy shop";
 ?>
 
 <?php
@@ -14,14 +14,14 @@ echo "Hello, this is ATN shop";
 
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=127.0.0.1:49797;port=5432;dbname=tungntgcd17146', 'postgres', '123456');
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
      echo '<p>The DB exists</p>';
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-18-233-137-77.compute-1.amazonaws.com;port=5432;user=cibttxrjklxbqp;password=be605ce69ac7c5cf26b6b3a833e65b243685409a9d385e0a9872bdd17299b098;
-        dbname=dfuhjimp17l4vf",
+        "host=ec2-54-225-72-238.compute-1.amazonaws.com;port=5432;user=zyspzjwbrlxfnk;password=95402f2fcd09500f7ad877a328cb24cb0ac00800666b42159462534ac9619b11
+;dbname=d7f8iof0djq8lo",
         $db["host"],
         $db["port"],
         $db["user"],
@@ -30,7 +30,7 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "SELECT * FROM managerATN";
+$sql = "SELECT * FROM toy";
 $stmt = $pdo->prepare($sql);
 //Thiết lập kiểu dữ liệu trả về
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -43,8 +43,8 @@ $resultSet = $stmt->fetchAll();
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
+        <th>Toy ID</th>
+        <th>Toy Name</th>
       </tr>
     </thead>
     <tbody>
@@ -54,8 +54,8 @@ $resultSet = $stmt->fetchAll();
              foreach ($resultSet as $row) {
       ?>
       <tr>
-        <td scope="row"><?php echo $row['id'] ?></td>
-        <td><?php echo $row['name'] ?></td>  
+        <td scope="row"><?php echo $row['toyid'] ?></td>
+        <td><?php echo $row['toyname'] ?></td>  
       </tr>
       <?php
         }
