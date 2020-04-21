@@ -113,11 +113,11 @@ $resultSet = $stmt->fetchAll();
       <?php
       // tạo vòng lặp 
          //while($r = mysql_fetch_array($result)){
-             foreach ($resultSet as $row) {
+             foreach ($resultSet as $column) {
       ?>
       <tr>
-        <td scope="row"><?php echo $row['toyid'] ?></td>
-        <td><?php echo $row['toyname'] ?></td>  
+        <td scope="column"><?php echo $column['toyid'] ?></td>
+        <td><?php echo $column['toyname'] ?></td>  
       </tr>
       <?php
         }
