@@ -92,19 +92,22 @@ if (empty(getenv("DATABASE_URL"))){
    ));
 }  
 
-$sql = "SELECT toyid, toyname * FROM toy";
-$result = $conn->query($sql);
- 
-if ($result->num_rows > 0) {
-    // output dữ liệu trên trang
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["toyid"]. " - Name: " . $row["toyname"].  "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
-?>
+$sql = "SELECT * FROM toy";
+$stmt = $pdo->prepare($sql);
+//Thiết lập kiểu dữ liệu trả về
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$stmt->execute();
+$resultSet = $stmt->fetchAll();
+
+
+
+      <tr>
+        <td scope="row"><?php echo $row['toyid'] ?></td>
+        <td><?php echo $row['toyname'] ?></td>  
+      </tr>
+      <?php
+        }
+      ?>
     </tbody>
   </table>
 </div>
