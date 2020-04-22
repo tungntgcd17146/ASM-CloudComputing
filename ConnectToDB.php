@@ -100,7 +100,21 @@ $stmt->execute();
 $resultSet = $stmt->fetchAll();
 
 
-
+?>
+<div id="container">
+<table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Toy ID</th>
+        <th>Toy Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      // tạo vòng lặp 
+         //while($r = mysql_fetch_array($result)){
+             foreach ($resultSet as $row) {
+      ?>
       <tr>
         <td scope="row"><?php echo $row['toyid'] ?></td>
         <td><?php echo $row['toyname'] ?></td>  
