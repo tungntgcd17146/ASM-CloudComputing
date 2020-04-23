@@ -52,10 +52,10 @@ img {vertical-align: middle;}
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.php" class="w3-bar-item w3-button">ATN shop</a>
+    <a href="index.php" class="w3-bar-item w3-button">ATN Company</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="ConnectToDB.php" class="w3-bar-item w3-button">View</a>
+      <a href="ConnectToDB.php" class="w3-bar-item w3-button">View Product Information</a>
       <a href="InsertData.php" class="w3-bar-item w3-button">Insert</a>
       <a href="UpdateData.php" class="w3-bar-item w3-button">Update</a>
       <a href="DeleteData.php" class="w3-bar-item w3-button">Delete</a>
@@ -64,26 +64,27 @@ img {vertical-align: middle;}
 </div>
 </head>
 <body>
-  <h1>DATABASE CONNECTION</h1>
+  <h1>TOY INFORMATION MANAGEMENT</h1>
 </body>
-<h1>DATABASE CONNECTION</h1>
+<h1>TOY INFORMATION MANAGEMENT</h1>
 <?php
 ini_set('display_errors', 1);
-echo "Hello, this is ATN toy shop";
+echo "Welcome to ATN toy company";
 ?>
 
 <?php
 
 
 if (empty(getenv("DATABASE_URL"))){
-    echo '<p>The DB does not exist</p>';
-    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', 'postgres', '123456');
+    echo '<p>The DataBase does not exist</p>';
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
-     echo '<p>The DB exists</p>';
+     echo '<p>The DataBase exists</p>';
      echo getenv("dbname");
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
-        "host=ec2-18-233-137-77.compute-1.amazonaws.com;port=5432;user=cibttxrjklxbqp;password=be605ce69ac7c5cf26b6b3a833e65b243685409a9d385e0a9872bdd17299b098;dbname=dfuhjimp17l4vf",
+        "host=ec2-54-225-72-238.compute-1.amazonaws.com;port=5432;user=zyspzjwbrlxfnk;password=95402f2fcd09500f7ad877a328cb24cb0ac00800666b42159462534ac9619b11
+;dbname=d7f8iof0djq8lo",
         $db["host"],
         $db["port"],
         $db["user"],
