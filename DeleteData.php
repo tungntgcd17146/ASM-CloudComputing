@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>HOME PAGE</title>
+<title>DELETE PAGE</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -55,7 +55,7 @@ img {vertical-align: middle;}
     <a href="index.php" class="w3-bar-item w3-button">ATN Company</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="ConnectToDB.php" class="w3-bar-item w3-button">View Product Information</a>
+      <a href="ConnectToDB.php" class="w3-bar-item w3-button">View Products Information</a>
       <a href="InsertData.php" class="w3-bar-item w3-button">Insert</a>
       <a href="UpdateData.php" class="w3-bar-item w3-button">Update</a>
       <a href="DeleteData.php" class="w3-bar-item w3-button">Delete</a>
@@ -64,9 +64,9 @@ img {vertical-align: middle;}
 </div>
 </head>
 <body>
-  <h1>TOY INFORMATION MANAGEMENT</h1>
+  <h1>DELETE INFORMATION</h1>
 </body>
-<h1>TOY INFORMATION MANAGEMENT</h1>
+<h1>DELETE INFORMATION</h1>
 
 <?php
 
