@@ -79,13 +79,10 @@ echo "Update database!";
 </form>
 </ul>
 <?php
-
-
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
-}  else {
-     
+}  else {     
    $db = parse_url(getenv("DATABASE_URL"));
    $pdo = new PDO("pgsql:" . sprintf(
        "host=ec2-54-225-72-238.compute-1.amazonaws.com;port=5432;user=zyspzjwbrlxfnk;password=95402f2fcd09500f7ad877a328cb24cb0ac00800666b42159462534ac9619b11
@@ -104,8 +101,6 @@ if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
 } else {
     echo "Error updating record. ";
-}}
-    
-?>
+}}?>
 </body>
 </html>
