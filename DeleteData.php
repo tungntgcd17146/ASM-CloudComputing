@@ -67,9 +67,7 @@ img {vertical-align: middle;}
   <h1>DELETE INFORMATION</h1>
 </body>
 <h1>DELETE INFORMATION</h1>
-
 <?php
-
 echo "Insert Information!";
 ?>
 <ul>
@@ -77,8 +75,6 @@ echo "Insert Information!";
 <li>toyID:</li><li><input type="text" name="toyid" /></li>
 <li><button type="submit" value="Submit">Delete</button></li>
 <?php
-
-
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
@@ -95,10 +91,8 @@ if (empty(getenv("DATABASE_URL"))){
         ltrim($db["path"], "/")
    ));
 }  
-
 $sql = "DELETE FROM toy WHERE toyid = '$_POST[toyid]'";
 $stmt = $pdo->prepare($sql);
-
 if(is_null ($_POST[toyid])== FALSE)  {    
     if($stmt->execute() == TRUE){
         echo "Record updated successfully.";
@@ -106,5 +100,4 @@ if(is_null ($_POST[toyid])== FALSE)  {
         echo "Error updating record. ";
     }}
 ?>
-
 </html>
