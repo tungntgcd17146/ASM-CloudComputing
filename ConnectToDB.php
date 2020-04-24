@@ -99,8 +99,6 @@ $stmt = $pdo->prepare($sql);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 $resultSet = $stmt->fetchAll();
-
-
 ?>
 <div id="container">
 <table class="table table-bordered table-condensed">
@@ -126,5 +124,4 @@ $resultSet = $stmt->fetchAll();
     </tbody>
   </table>
 </div>
-
 </html>
